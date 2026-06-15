@@ -77,6 +77,77 @@
           <script src="assets/js/bootstrap.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
           <script src="assets/js/script.js"></script>
+          <!-- ─── BETTING ODDS CALCULATOR ─── -->
+          <div class="col-lg-6 col-md-6 col-sm-8 mt-4">
+            <div class="border border-dotted border-3 rounded-3 p-3 mb-4 bg-white bg-opacity-50">
+              <h4 class="text-center group-header mb-0">BETTING ODDS CALCULATOR</h4>
+              <p class="text-center text-small text-muted">
+                <i>Convert odds & calculate winnings</i>
+              </p>
+            </div>
+            <div class="card calculator-card">
+              <div class="card-body p-4">
+                <div class="odds-section">
+                  <label class="section-title">Odds Format</label>
+                  <div class="odds-format-toggle">
+                    <button class="odds-format-btn active" onclick="setOddsFormat('fractional')">Fractional</button>
+                    <button class="odds-format-btn" onclick="setOddsFormat('decimal')">Decimal</button>
+                    <button class="odds-format-btn" onclick="setOddsFormat('moneyline')">Moneyline</button>
+                  </div>
+
+                  <div class="odds-input-group" id="fractional-inputs">
+                    <div class="odds-input-pair">
+                      <input type="number" id="frac-num" class="form-control" placeholder="Numerator" min="0" oninput="calculateOdds()">
+                      <span class="odds-separator">/</span>
+                      <input type="number" id="frac-den" class="form-control" placeholder="Denominator" min="1" oninput="calculateOdds()">
+                    </div>
+                  </div>
+
+                  <div class="odds-input-group" id="decimal-inputs" style="display:none">
+                    <input type="number" id="dec-val" class="form-control" placeholder="Decimal odds (e.g. 3.50)" min="1.01" step="0.01" oninput="calculateOdds()">
+                  </div>
+
+                  <div class="odds-input-group" id="moneyline-inputs" style="display:none">
+                    <input type="number" id="ml-val" class="form-control" placeholder="Moneyline (e.g. +150 or -110)" step="1" oninput="calculateOdds()">
+                  </div>
+
+                  <div class="stake-input-group">
+                    <label class="section-title">Stake ($)</label>
+                    <input type="number" id="stake-val" class="form-control" placeholder="10.00" min="0.01" step="0.01" oninput="calculateOdds()">
+                  </div>
+
+                  <div class="odds-results" id="odds-results">
+                    <div class="odds-result-row">
+                      <span class="odds-result-label">Fractional</span>
+                      <span class="odds-result-value" id="res-fractional">—</span>
+                    </div>
+                    <div class="odds-result-row">
+                      <span class="odds-result-label">Decimal</span>
+                      <span class="odds-result-value" id="res-decimal">—</span>
+                    </div>
+                    <div class="odds-result-row">
+                      <span class="odds-result-label">Moneyline</span>
+                      <span class="odds-result-value" id="res-moneyline">—</span>
+                    </div>
+                    <div class="odds-result-row">
+                      <span class="odds-result-label">Implied Probability</span>
+                      <span class="odds-result-value" id="res-probability">—</span>
+                    </div>
+                    <div class="odds-result-row highlight">
+                      <span class="odds-result-label">Potential Return</span>
+                      <span class="odds-result-value" id="res-return">—</span>
+                    </div>
+                    <div class="odds-result-row highlight">
+                      <span class="odds-result-label">Profit</span>
+                      <span class="odds-result-value" id="res-profit">—</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script src="assets/js/odds.js"></script>
           <button id="scroll-to-calculator" title="Back to Calculator">↑</button>
         </div>
       </div>

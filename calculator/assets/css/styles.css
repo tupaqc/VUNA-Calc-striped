@@ -801,3 +801,135 @@
  
   /* error state */
   .adc-error { color: #dc3545; font-size: .85rem; margin-top: 6px; display: none; }
+
+  /* ── Betting Odds Calculator ── */
+  .odds-section {
+    padding: 10px 0;
+  }
+  .odds-format-toggle {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .odds-format-btn {
+    flex: 1;
+    padding: 8px 6px;
+    border: 2px solid #dee2e6;
+    background: white;
+    color: #6c757d;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: .82rem;
+    cursor: pointer;
+    transition: all .2s;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+  }
+  .odds-format-btn.active {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+  }
+  .odds-format-btn:hover:not(.active) {
+    border-color: #adb5bd;
+    color: #495057;
+  }
+  .odds-input-group {
+    margin-bottom: 14px;
+  }
+  .odds-input-group .form-control {
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+  .odds-input-pair {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .odds-input-pair .form-control {
+    flex: 1;
+    text-align: center;
+  }
+  .odds-separator {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6c757d;
+  }
+  .stake-input-group {
+    margin-bottom: 16px;
+  }
+  .stake-input-group .form-control {
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+  .odds-results {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 14px;
+    border: 1px solid #e9ecef;
+  }
+  .odds-result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+  }
+  .odds-result-row:last-child {
+    border-bottom: none;
+  }
+  .odds-result-row.highlight {
+    background: #e7f1ff;
+    margin: 4px -14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border-bottom: none;
+  }
+  .odds-result-label {
+    font-size: .85rem;
+    color: #6c757d;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+  }
+  .odds-result-value {
+    font-weight: 700;
+    color: #212529;
+    font-size: 1.05rem;
+  }
+  .odds-result-row.highlight .odds-result-value {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+  }
+
+  body.dark-mode .odds-format-btn {
+    background: #444444;
+    color: #e0e0e0;
+    border-color: #555555;
+  }
+  body.dark-mode .odds-format-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+  }
+  body.dark-mode .odds-results {
+    background: #333333;
+    border-color: #444444;
+  }
+  body.dark-mode .odds-result-row {
+    border-bottom-color: #444444;
+  }
+  body.dark-mode .odds-result-label {
+    color: #adb5bd;
+  }
+  body.dark-mode .odds-result-value {
+    color: #e0e0e0;
+  }
+  body.dark-mode .odds-result-row.highlight {
+    background: rgba(13, 110, 253, 0.15);
+  }
+  body.dark-mode .odds-separator {
+    color: #adb5bd;
+  }
